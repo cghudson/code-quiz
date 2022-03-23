@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgb(206, 238, 206);
+    padding: 15px 30px;
+    font-size: 2rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+.main-contents {
+    padding: 10% 15%;
+    text-align: center;
+}

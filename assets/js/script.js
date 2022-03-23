@@ -1,10 +1,17 @@
 var startTime = 40
 var finalScoreEl = document.querySelector(".final-score")
 var quizQuestionsEl = document.querySelector(".quiz-questions")
+var startBtnEl = document.getElementById("start-btn")
+var instructionsEl = document.querySelector(".instructions")
 
 finalScoreEl.style.display = "none"
 quizQuestionsEl.style.display = "none"
 
+
+startBtnEl.addEventListener("click", function() {
+    quizQuestionsEl.style.display = "block"  
+    instructionsEl.style.display = "none"
+})
 
 //click start button
     //timer starts

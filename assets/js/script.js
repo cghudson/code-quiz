@@ -1,4 +1,5 @@
 var startTime = 40
+var timerEl = document.getElementById("timer")
 var finalScoreEl = document.querySelector(".final-score")
 var quizQuestionsEl = document.querySelector(".quiz-questions")
 var startBtnEl = document.getElementById("start-btn")
@@ -18,6 +19,7 @@ finalScoreEl.style.display = "none"
 quizQuestionsEl.style.display = "none"
 var questionNum = 0
 var score = 0
+var timerObject 
 var questionsList = [
     {
         question: "Arrays starting index is_____ ?",
@@ -65,6 +67,15 @@ startBtnEl.addEventListener("click", function () {
     quizQuestionsEl.style.display = "block"
     instructionsEl.style.display = "none"
     showQuestion()
+    timerObject = setInterval(function(){
+        timerEl.textContent = startTime
+        if (startTime >= 1) {
+            startTime--;
+        } else {
+            clearInterval(timerObject)
+            timerEl.textContent = "Time is up!"
+        }
+    },1000)
 })
 
 function showQuestion() {
@@ -82,6 +93,7 @@ function validateAnswer() {
         score += 5
         choiceEl.textContent = "Correct!"
     } else {
+        startTime -= 5
         choiceEl.textContent = "Incorrect!"
     }
     if (questionNum < questionsList.length - 1) {
@@ -91,6 +103,8 @@ function validateAnswer() {
         finalScoreEl.style.display = "block"
         quizQuestionsEl.style.display = "none"
         console.log(score)
+        clearInterval(timerObject)
+        timerEl.textContent = `The quiz is over. The remaining time ${startTime}will be added to your score.`
     }
 }
 

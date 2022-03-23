@@ -8,68 +8,91 @@ var answer1El = document.getElementById("answer1")
 var answer2El = document.getElementById("answer2")
 var answer3El = document.getElementById("answer3")
 var answer4El = document.getElementById("answer4")
+answer1El.addEventListener("click", validateAnswer)
+answer2El.addEventListener("click", validateAnswer)
+answer3El.addEventListener("click", validateAnswer)
+answer4El.addEventListener("click", validateAnswer)
+var choiceEl = document.getElementById("choice")
 
 finalScoreEl.style.display = "none"
 quizQuestionsEl.style.display = "none"
 var questionNum = 0
-
+var score = 0
 var questionsList = [
     {
         question: "Arrays starting index is_____ ?",
         choice1: "0",
-        choice2:"1",
-        choice3:"99",
-        choice4:"1000",
-        answer:"0"
+        choice2: "1",
+        choice3: "99",
+        choice4: "1000",
+        answer: "0"
     },
     {
         question: "Arrays starting index is_____ ?",
         choice1: "0",
-        choice2:"1",
-        choice3:"99",
-        choice4:"1000",
-        answer:"0"
+        choice2: "1",
+        choice3: "99",
+        choice4: "1000",
+        answer: "0"
     },
     {
         question: "Arrays starting index is_____ ?",
         choice1: "0",
-        choice2:"1",
-        choice3:"99",
-        choice4:"1000",
-        answer:"0"
+        choice2: "1",
+        choice3: "99",
+        choice4: "1000",
+        answer: "0"
     },
     {
         question: "Arrays starting index is_____ ?",
         choice1: "0",
-        choice2:"1",
-        choice3:"99",
-        choice4:"1000",
-        answer:"0"
+        choice2: "1",
+        choice3: "99",
+        choice4: "1000",
+        answer: "0"
     },
     {
         question: "Arrays starting index is_____ (last)?",
         choice1: "0",
-        choice2:"1",
-        choice3:"99",
-        choice4:"1000",
-        answer:"0"
+        choice2: "1",
+        choice3: "99",
+        choice4: "1000",
+        answer: "0"
     },
 ]
 
-startBtnEl.addEventListener("click", function() {
-    quizQuestionsEl.style.display = "block"  
+startBtnEl.addEventListener("click", function () {
+    quizQuestionsEl.style.display = "block"
     instructionsEl.style.display = "none"
     showQuestion()
 })
 
-function showQuestion () {
+function showQuestion() {
     questionEl.textContent = questionsList[questionNum].question
     answer1El.textContent = questionsList[questionNum].choice1
     answer2El.textContent = questionsList[questionNum].choice2
     answer3El.textContent = questionsList[questionNum].choice3
     answer4El.textContent = questionsList[questionNum].choice4
 }
- 
+
+function validateAnswer() {
+    var userChoice = this.textContent
+    console.log(userChoice)
+    if (userChoice === questionsList[questionNum].answer) {
+        score += 5
+        choiceEl.textContent = "Correct!"
+    } else {
+        choiceEl.textContent = "Incorrect!"
+    }
+    if (questionNum < questionsList.length - 1) {
+        questionNum++
+        showQuestion()
+    } else {
+        finalScoreEl.style.display = "block"
+        quizQuestionsEl.style.display = "none"
+        console.log(score)
+    }
+}
 
 //click start button
     //timer starts

@@ -16,6 +16,8 @@ answer3El.addEventListener("click", validateAnswer)
 answer4El.addEventListener("click", validateAnswer)
 var choiceEl = document.getElementById("choice")
 var userScoreEl = document.querySelector(".userScore")
+var saveScoreEl = document.getElementById("save-score")
+var highScoreListEl = document.querySelector("highScoreList")
 
 finalScoreEl.style.display = "none"
 quizQuestionsEl.style.display = "none"
@@ -107,11 +109,15 @@ function validateAnswer() {
         finalScoreEl.style.display = "block"
         quizQuestionsEl.style.display = "none"
         clearInterval(timerObject)
-        userScoreEl.textContent = "Your Final Score is: " + (score += `${startTime}`)
+        userScoreEl.textContent = "Your Final Score is: " + score 
         timeEl.textContent = "Remaining Time: "
         timerEl.textContent = `${startTime}`
     }
 }
+
+saveScoreEl.addEventListener("click", function() {
+    localStorage.setItem("highScore", JSON.parse(score))
+})
 
 //click start button
     //timer starts

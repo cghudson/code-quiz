@@ -13,13 +13,12 @@
     <nav>
         <a href="highscores.html" class="highscore">View High Scores</a>
         <h1>JavaScript Code Quiz</h1>
-       <h2> <strong>Time:</strong> <span id="timer">0</span></h2>
+        <h2> <strong class="time">Time:</strong> <span id="timer">0</span></h2>
     </nav>
     <div class="main-contents">
         <main class="instructions">
             <h2>Quiz Instructions:</h2>
-            <p>Try to answer the following questions within the time limit. Incorrect answers will deduct 5 seconds from
-                the timer. Good luck!</p>
+            <p>Try to answer the following questions within the time limit. Incorrect answers will deduct 5 seconds from the time. The remaining time will be added to your final score. Good luck!</p>
             <button id="start-btn" class="btn">Start Quiz</button>
         </main>
 
@@ -35,9 +34,10 @@
         </div>
 
         <form class="final-score">
-            <label>Enter User Initials</label>
-            <input type ="text" id="user"/>
-            <button id="save-user">Save</button>
+            <h4 class="userScore"></h4>
+            <label>Enter Initials: </label>
+            <input type="text" id="user" />
+            <button id="save-score">Save</button>
         </form>
     </div>
 

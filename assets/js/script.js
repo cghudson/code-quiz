@@ -1,5 +1,6 @@
 var startTime = 40
 var timerEl = document.getElementById("timer")
+var timeEl = document.querySelector(".time")
 var finalScoreEl = document.querySelector(".final-score")
 var quizQuestionsEl = document.querySelector(".quiz-questions")
 var startBtnEl = document.getElementById("start-btn")
@@ -14,52 +15,55 @@ answer2El.addEventListener("click", validateAnswer)
 answer3El.addEventListener("click", validateAnswer)
 answer4El.addEventListener("click", validateAnswer)
 var choiceEl = document.getElementById("choice")
+var userScoreEl = document.querySelector(".userScore")
 
 finalScoreEl.style.display = "none"
 quizQuestionsEl.style.display = "none"
+
 var questionNum = 0
 var score = 0
-var timerObject 
+var timerObject
+
 var questionsList = [
     {
-        question: "Arrays starting index is_____ ?",
-        choice1: "0",
-        choice2: "1",
-        choice3: "99",
-        choice4: "1000",
-        answer: "0"
+        question: "Commonly used data types DO NOT include:",
+        choice1: "strings",
+        choice2: "booleans",
+        choice3: "alerts",
+        choice4: "numbers",
+        answer: "alerts"
     },
     {
-        question: "Arrays starting index is_____ ?",
-        choice1: "0",
-        choice2: "1",
-        choice3: "99",
-        choice4: "1000",
-        answer: "0"
+        question: "The condition in an if / else statement is enclosed with ____",
+        choice1: "quotes",
+        choice2: "curly brackets",
+        choice3: "parentheses",
+        choice4: "square brackets",
+        answer: "curly brackets"
     },
     {
-        question: "Arrays starting index is_____ ?",
-        choice1: "0",
-        choice2: "1",
-        choice3: "99",
-        choice4: "1000",
-        answer: "0"
+        question: "Arrays in JavaScript can be used to store ____",
+        choice1: "numbers and strings",
+        choice2: "other arrays",
+        choice3: "booleans",
+        choice4: "all of the above",
+        answer: "all of the above"
     },
     {
-        question: "Arrays starting index is_____ ?",
-        choice1: "0",
-        choice2: "1",
-        choice3: "99",
-        choice4: "1000",
-        answer: "0"
+        question: "String values must be enclosed within ______ when being assigned to variables.",
+        choice1: "commas",
+        choice2: "curly brackets",
+        choice3: "quotes",
+        choice4: "parentheses",
+        answer: "quotes"
     },
     {
-        question: "Arrays starting index is_____ (last)?",
-        choice1: "0",
-        choice2: "1",
-        choice3: "99",
-        choice4: "1000",
-        answer: "0"
+        question: "A very useful tool used during development and debugging for printing content to the debugger is:",
+        choice1: "JavaScript",
+        choice2: "terminal/bash",
+        choice3: "for loops",
+        choice4: "console.log",
+        answer: "console.log"
     },
 ]
 
@@ -67,7 +71,7 @@ startBtnEl.addEventListener("click", function () {
     quizQuestionsEl.style.display = "block"
     instructionsEl.style.display = "none"
     showQuestion()
-    timerObject = setInterval(function(){
+    timerObject = setInterval(function () {
         timerEl.textContent = startTime
         if (startTime >= 1) {
             startTime--;
@@ -75,7 +79,7 @@ startBtnEl.addEventListener("click", function () {
             clearInterval(timerObject)
             timerEl.textContent = "Time is up!"
         }
-    },1000)
+    }, 1000)
 })
 
 function showQuestion() {
@@ -102,9 +106,10 @@ function validateAnswer() {
     } else {
         finalScoreEl.style.display = "block"
         quizQuestionsEl.style.display = "none"
-        console.log(score)
         clearInterval(timerObject)
-        timerEl.textContent = `The quiz is over. The remaining time ${startTime}will be added to your score.`
+        userScoreEl.textContent = "Your Final Score is: " + (score += `${startTime}`)
+        timeEl.textContent = "Remaining Time: "
+        timerEl.textContent = `${startTime}`
     }
 }
 

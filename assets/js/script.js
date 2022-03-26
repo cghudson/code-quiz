@@ -17,7 +17,8 @@ answer4El.addEventListener("click", validateAnswer)
 var choiceEl = document.getElementById("choice")
 var userScoreEl = document.querySelector(".userScore")
 var saveScoreEl = document.getElementById("save-score")
-var highScoreListEl = document.querySelector("highScoreList")
+var highScoreListEl = document.querySelector("#highScoreList")
+var initialsEl = document.getElementById("user")
 
 finalScoreEl.style.display = "none"
 quizQuestionsEl.style.display = "none"
@@ -118,15 +119,14 @@ function validateAnswer() {
     }
 }
 
-saveScoreEl.addEventListener("click", function() {
-    localStorage.setItem("highScore", JSON.parse(score))
+saveScoreEl.addEventListener("click", function(event) {
+    event.preventDefault()
+    var highScoreArr = localStorage.getItem("highScore")
+    highScoreArr = JSON.parse(highScoreArr) || []
+    console.log(highScoreArr)
+    var initials = initialsEl.value
+    var data = { initials: initials, score: score }
+    highScoreArr.push(data)
+    localStorage.setItem("highScore", JSON.stringify(highScoreArr))
 })
 
-//click start button
-    //timer starts
-    //user presented with question
-    //when question is answered
-        //user is presented with next question
-    //if question is answered incorrectly, time subtracted from clock
-//quiz over when time = 0 || all quesitons answered
-    //user able to save initials and score

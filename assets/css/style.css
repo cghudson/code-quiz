@@ -17,6 +17,11 @@ nav .title {
     font-size: 2rem;
 }
 
+.header {
+    font-size: x-large;
+    padding: 2%;
+}
+
 a {
     text-decoration: none;
     color: black;
@@ -32,8 +37,19 @@ a {
     margin: 1%;
     background: rgb(18, 77, 18);
     color: white;
+    border-radius: 12px;
 }
 
 li {
     list-style-type: none;
+}
+
+.hsmain {
+    text-align: center;
+    padding: 10%;
+}
+
+.content {
+    font-size: large;
+    padding: 1%;
 }

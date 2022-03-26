@@ -1,4 +1,4 @@
-var startTime = 40
+var startTime =30
 var timerEl = document.getElementById("timer")
 var timeEl = document.querySelector(".time")
 var finalScoreEl = document.querySelector(".final-score")
@@ -80,6 +80,9 @@ startBtnEl.addEventListener("click", function () {
         } else {
             clearInterval(timerObject)
             timerEl.textContent = "Time is up!"
+            quizQuestionsEl.style.display = "none"
+            finalScoreEl.style.display = "block"
+            userScoreEl.textContent = "Your Final Score is: " + score 
         }
     }, 1000)
 })

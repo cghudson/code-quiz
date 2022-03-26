@@ -11,19 +11,19 @@
 
 <body>
     <nav>
-        <a href="highscores.html" class="highscore">View High Scores</a>
+        <a href="highscores.html" class="highscore btn">View High Scores</a>
         <h1 class="title">JavaScript Code Quiz</h1>
         <h2> <strong class="time">Time:</strong> <span id="timer">0</span></h2>
     </nav>
     <div class="main-contents">
         <main class="instructions">
-            <h2>Quiz Instructions:</h2>
-            <p>Try to answer the following questions within the time limit. Incorrect answers will deduct 5 seconds from the time. The remaining time will be added to your final score. Good luck!</p>
+            <h2 class="header">Quiz Instructions:</h2>
+            <p class="content">Try to answer the following questions within the time limit. Incorrect answers will deduct 5 seconds from the time. The remaining time will be added to your final score. Good luck!</p>
             <button id="start-btn" class="btn">Start Quiz</button>
         </main>
 
         <div class="quiz-questions">
-            <h3 class="question"></h3>
+            <h3 class="question content"></h3>
             <ul>
                 <li><button id="answer1" class="btn"></button></li>
                 <li><button id="answer2" class="btn"></button></li>
@@ -34,8 +34,8 @@
         </div>
 
         <form class="final-score">
-            <h4 class="userScore"></h4>
-            <label class="initials">Enter Initials: </label>
+            <h4 class="userScore header"></h4>
+            <label class="initials content">Enter Initials: </label>
             <input type="text" id="user" />
             <button id="save-score" class="btn">Save</button>
         </form>

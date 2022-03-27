@@ -17,7 +17,7 @@ answer4El.addEventListener("click", validateAnswer)
 var choiceEl = document.getElementById("choice")
 var userScoreEl = document.querySelector(".userScore")
 var saveScoreEl = document.getElementById("save-score")
-var highScoreListEl = document.querySelector("#highScoreList")
+// var highScoreListEl = document.querySelector(".highScoreList")
 var initialsEl = document.getElementById("user")
 
 finalScoreEl.style.display = "none"
@@ -119,13 +119,13 @@ function validateAnswer() {
 }
 
 saveScoreEl.addEventListener("click", function(event) {
-    // event.preventDefault()
+    event.preventDefault()
     var highScoreArr = localStorage.getItem("highScore")
     highScoreArr = JSON.parse(highScoreArr) || []
-    console.log(highScoreArr)
     var initials = initialsEl.value
     var data = { initials: initials, score: score }
     highScoreArr.push(data)
     localStorage.setItem("highScore", JSON.stringify(highScoreArr))
-
+    console.log(data)
 })
+

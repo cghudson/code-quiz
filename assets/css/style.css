@@ -4,6 +4,15 @@
     font-size: 1em;
 }
 
+.btn {
+    padding: 1%;
+    margin: 1%;
+    background: rgb(18, 77, 18);
+    color: white;
+    border-radius: 12px;
+}
+
+/* nav styles */
 nav {
     display: flex;
     align-items: center;
@@ -13,8 +22,19 @@ nav {
     font-size: 1.5rem;
 }
 
-nav .title {
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.title {
     font-size: 2rem;
+}
+
+/* main content styles */
+.main-contents {
+    padding: 10% 15%;
+    text-align: center;
 }
 
 .header {
@@ -22,34 +42,25 @@ nav .title {
     padding: 2%;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-
-.main-contents {
-    padding: 10% 15%;
-    text-align: center;
-}
-
-.btn {
+.content {
+    font-size: large;
     padding: 1%;
-    margin: 1%;
-    background: rgb(18, 77, 18);
-    color: white;
-    border-radius: 12px;
 }
 
+/* quiz question styles */
 li {
     list-style-type: none;
 }
 
+#choice {
+    font-style: italic;
+    padding: 2%;
+    color: gray;
+}
+
+/* high score styles */
 .hsmain {
     text-align: center;
     padding: 10%;
 }
 
-.content {
-    font-size: large;
-    padding: 1%;
-}

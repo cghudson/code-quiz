@@ -98,7 +98,6 @@ function showQuestion() {
 
 function validateAnswer() {
     var userChoice = this.textContent
-    console.log(userChoice)
     if (userChoice === questionsList[questionNum].answer) {
         score += 5
         choiceEl.textContent = "Correct!"
@@ -120,7 +119,7 @@ function validateAnswer() {
 }
 
 saveScoreEl.addEventListener("click", function(event) {
-    event.preventDefault()
+    // event.preventDefault()
     var highScoreArr = localStorage.getItem("highScore")
     highScoreArr = JSON.parse(highScoreArr) || []
     console.log(highScoreArr)
@@ -128,5 +127,6 @@ saveScoreEl.addEventListener("click", function(event) {
     var data = { initials: initials, score: score }
     highScoreArr.push(data)
     localStorage.setItem("highScore", JSON.stringify(highScoreArr))
+    highScoreListEl = JSON.parse(highScoreArr)
 })
 

@@ -129,4 +129,3 @@ saveScoreEl.addEventListener("click", function(event) {
     localStorage.setItem("highScore", JSON.stringify(highScoreArr))
 
 })
-

@@ -127,6 +127,6 @@ saveScoreEl.addEventListener("click", function(event) {
     var data = { initials: initials, score: score }
     highScoreArr.push(data)
     localStorage.setItem("highScore", JSON.stringify(highScoreArr))
-    highScoreListEl = JSON.parse(highScoreArr)
+
 })
 

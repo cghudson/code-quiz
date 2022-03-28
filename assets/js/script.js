@@ -119,7 +119,7 @@ function validateAnswer() {
 }
 
 saveScoreEl.addEventListener("click", function(event) {
-    event.preventDefault()
+    // event.preventDefault()
     var highScoreArr = localStorage.getItem("highScore")
     highScoreArr = JSON.parse(highScoreArr) || []
     var initials = initialsEl.value
